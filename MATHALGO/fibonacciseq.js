@@ -6,4 +6,4 @@ function fib(n){
 return fib
 }
 
-console.log(fib(7))
+console.log(fib(5))
