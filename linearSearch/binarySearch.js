@@ -22,21 +22,62 @@
 
 
 
-function binarySearchSet(arr,search){
-    lefIndex=0
-    rightIndex=arr.length-1
-    while(lefIndex<=rightIndex){
-        let middleIndex=Math.floor((lefIndex+rightIndex)/2)
-        if(arr[middleIndex]==search){
-            return middleIndex;
+// function binarySearchSet(arr,search){
+//     lefIndex=0
+//     rightIndex=arr.length-1
+//     while(lefIndex<=rightIndex){
+//         let middleIndex=Math.floor((lefIndex+rightIndex)/2)
+//         if(arr[middleIndex]==search){
+//             return middleIndex;
+//         }
+//         if(arr[middleIndex]>search){
+//             rightIndex=middleIndex+1
+//         }else{
+//             lefIndex=middleIndex-1
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function binarySearchSet(value,target){
+    if(value==""){
+        return 
+    }
+   let left=0
+   let right=value.length-1
+    while(left<=right){
+        let middleIndex=Math.floor((left+right)/2)
+        if(value[middleIndex]==target){
+            return middleIndex
         }
-        if(arr[middleIndex]>search){
-            rightIndex=middleIndex+1
+        if(value[middleIndex]>target){
+        
+            right=middleIndex+1
+
         }else{
             lefIndex=middleIndex-1
         }
+
     }
 }
+
+
+
+
+
+
 
 
 console.log(binarySearchSet([1,2,3,4,5,6,7,8,9],2))

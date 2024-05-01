@@ -21,23 +21,49 @@
 
 
 
-function recBinary(arr,search){
-    return searchBinay(arr,search,0,arr.length-1)
+// function recBinary(arr,search){
+//     return searchBinay(arr,search,0,arr.length-1)
+// }
+// function searchBinay(arr,target,left,right){
+//     if(left>right){
+//         return false
+//     }
+//     const middleIndex=Math.floor((left+right)/2)
+//     if(arr[middleIndex]==target){
+//         return middleIndex
+//     }
+//     if(target>arr[middleIndex]){
+//         return searchBinay(arr,target,middleIndex+1,right)
+//     }else{
+//         return searchBinay(arr,target,left,middleIndex-1)
+//     }
+// }
+
+function recBinary(arr,target){
+    let left=0;
+let right=arr.length-1
+return searchBinaya(arr,target,left,right)
 }
-function searchBinay(arr,target,left,right){
+ function searchBinaya(arr,target,left,right){
     if(left>right){
-        return false
+        return -1
     }
-    const middleIndex=Math.floor((left+right)/2)
+    middleIndex=Math.floor((left+right)/2)
     if(arr[middleIndex]==target){
         return middleIndex
     }
-    if(target>arr[middleIndex]){
-        return searchBinay(arr,target,middleIndex+1,right)
+    if(arr[middleIndex]>target){
+        console.log("JJO");
+        return searchBinaya(arr,target,left,middleIndex-1)
     }else{
-        return searchBinay(arr,target,left,middleIndex-1)
+        console.log("HERE");
+        return searchBinaya(arr,target,middleIndex+1,right)
     }
-}
+ }
 
 
-console.log(recBinary([2,3,4,5,16],16))
+console.log(recBinary([2,3,4,5,16],2))
+
+
+
+

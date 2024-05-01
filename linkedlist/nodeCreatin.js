@@ -8,6 +8,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.tali=null
     this.size = 0;
   }
   isEmpty() {
@@ -20,6 +21,8 @@ class LinkedList {
     const node = new Node(value);
     if (this.isEmpty()) {
       this.head = node;
+      this.tali=node
+
     } else {
       node.next = this.head;
       this.head = node;
@@ -30,9 +33,11 @@ class LinkedList {
     const node = new Node(value);
     if (this.isEmpty()) {
       this.head = node;
+      this.tali=node
     } else {
       let prev = this.head;
       while (prev.next) {
+        
         prev = prev.next;
       }
       prev.next = node;
@@ -143,19 +148,41 @@ class LinkedList {
         return -1
     }
   }
+  toArray(arr){
+    console.log("hi")
+    if(arr.length==0){
+        return -1
+    }
+    for(let a of arr){
+        console.log(a)
+        this.append(a)
+    }        
+    return 
+}
+ reverse(){
+let  prev=null
+ let curr=this.head
+  while(curr){
+   let next=curr.next
+   curr.next=prev
+    prev=curr
+    curr=next
+  }
+  this.head=prev
+ }
+ 
 }
 
 const list = new LinkedList();
 console.log(list.getSize());
 console.log(list.isEmpty());
-list.append(10);
-list.append(11);
-list.append(12);
-list.append(13);
-list.append(14);
-list.print();
-list.remove(0);
-list.print();
-list.removeByValue(13);
-list.print();
-console.log(list.search(15));
+list.insert(10,0)
+list.insert(11,1)
+list.insert(12,2)
+list.insert(13,3)
+list.insert(14,4)
+list.insert(15,5)
+list.print()
+list.reverse()
+list.print()
+

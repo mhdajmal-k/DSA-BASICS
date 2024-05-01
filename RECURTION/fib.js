@@ -7,3 +7,11 @@ function fibRec(n){
 }
 
 console.log(fibRec(5))
+
+
+
+
+
+
+
+
